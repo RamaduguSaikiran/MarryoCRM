@@ -1,0 +1,1314 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MARRYO CRM DESIGN SYSTEM - Premium Burgundy & Gold
+   A warm, elegant CRM design system inspired by Indian wedding aesthetics
+   Palette: Burgundy primary, Gold accent, Ivory background
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Base radius for components */
+  --radius: 0.625rem;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     BRAND COLORS — Marryo: Burgundy, Gold, Ivory
+     ───────────────────────────────────────────────────────────────────────── */
+  --color-brand-primary: hsl(350, 45%, 30%);   /* Deep Burgundy */
+  --color-brand-gold: hsl(38, 50%, 55%);        /* Warm Gold */
+  --color-brand-ivory: hsl(45, 33%, 97%);       /* Soft Ivory */
+  --color-brand-dark: hsl(20, 15%, 15%);        /* Deep Brown-Black */
+  --color-brand-white: #ffffff;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     LIGHT MODE — Warm ivory surfaces with burgundy & gold accents
+     ───────────────────────────────────────────────────────────────────────── */
+
+  /* Core surfaces */
+  --background: hsl(45, 33%, 97%);           /* Soft ivory */
+  --foreground: hsl(20, 15%, 15%);           /* Deep brown-black */
+  --card: hsl(45, 40%, 99%);                 /* Near-white ivory */
+  --card-foreground: hsl(20, 15%, 15%);
+  --popover: hsl(45, 40%, 99%);
+  --popover-foreground: hsl(20, 15%, 15%);
+
+  /* Primary - Burgundy */
+  --primary: hsl(350, 45%, 30%);
+  --primary-foreground: hsl(45, 33%, 97%);
+
+  /* Secondary */
+  --secondary: hsl(45, 20%, 94%);
+  --secondary-foreground: hsl(20, 15%, 25%);
+
+  /* Muted */
+  --muted: hsl(45, 20%, 94%);
+  --muted-foreground: hsl(20, 10%, 45%);
+
+  /* Accent - Gold */
+  --accent: hsl(38, 35%, 92%);
+  --accent-foreground: hsl(38, 50%, 35%);
+
+  /* Destructive */
+  --destructive: hsl(0, 65%, 45%);
+
+  /* Borders & inputs */
+  --border: hsl(38, 25%, 88%);
+  --input: hsl(38, 25%, 88%);
+  --ring: hsl(350, 45%, 30%);
+
+  /* Chart colors - Marryo palette */
+  --chart-1: hsl(350, 45%, 30%);
+  --chart-2: hsl(38, 50%, 55%);
+  --chart-3: hsl(350, 35%, 45%);
+  --chart-4: hsl(38, 40%, 70%);
+  --chart-5: hsl(38, 30%, 85%);
+
+  /* Sidebar */
+  --sidebar: hsl(45, 40%, 99%);
+  --sidebar-foreground: hsl(20, 15%, 25%);
+  --sidebar-primary: hsl(350, 45%, 30%);
+  --sidebar-primary-foreground: hsl(45, 33%, 97%);
+  --sidebar-accent: hsl(38, 35%, 92%);
+  --sidebar-accent-foreground: hsl(20, 15%, 20%);
+  --sidebar-border: hsl(38, 25%, 88%);
+  --sidebar-ring: hsl(350, 45%, 30%);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     RAW HSL CHANNELS — For Tailwind opacity modifier support (bg-X/50 etc.)
+     These are the raw H S% L% values WITHOUT hsl() wrapper
+     ───────────────────────────────────────────────────────────────────────── */
+  --background-hsl: 45 33% 97%;
+  --foreground-hsl: 20 15% 15%;
+  --card-hsl: 45 40% 99%;
+  --card-foreground-hsl: 20 15% 15%;
+  --popover-hsl: 45 40% 99%;
+  --popover-foreground-hsl: 20 15% 15%;
+  --primary-hsl: 350 45% 30%;
+  --primary-foreground-hsl: 45 33% 97%;
+  --secondary-hsl: 45 20% 94%;
+  --secondary-foreground-hsl: 20 15% 25%;
+  --muted-hsl: 45 20% 94%;
+  --muted-foreground-hsl: 20 10% 45%;
+  --accent-hsl: 38 35% 92%;
+  --accent-foreground-hsl: 38 50% 35%;
+  --destructive-hsl: 0 65% 45%;
+  --border-hsl: 38 25% 88%;
+  --input-hsl: 38 25% 88%;
+  --ring-hsl: 350 45% 30%;
+  --sidebar-hsl: 45 40% 99%;
+  --sidebar-foreground-hsl: 20 15% 25%;
+  --sidebar-primary-hsl: 350 45% 30%;
+  --sidebar-primary-foreground-hsl: 45 33% 97%;
+  --sidebar-accent-hsl: 38 35% 92%;
+  --sidebar-accent-foreground-hsl: 20 15% 20%;
+  --sidebar-border-hsl: 38 25% 88%;
+  --sidebar-ring-hsl: 350 45% 30%;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     PRIMARY COLOR SCALE — Burgundy
+     ───────────────────────────────────────────────────────────────────────── */
+  --color-primary-default: hsl(350, 45%, 30%);
+  --color-primary-hover: hsl(350, 45%, 24%);
+  --color-primary-active: hsl(350, 45%, 18%);
+  --color-primary-light: hsl(350, 45%, 96%);
+
+  /* Gold accent scale */
+  --color-gold-default: hsl(38, 50%, 55%);
+  --color-gold-hover: hsl(38, 55%, 45%);
+  --color-gold-light: hsl(38, 50%, 93%);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     SEMANTIC COLORS
+     ───────────────────────────────────────────────────────────────────────── */
+
+  /* Negative/Error */
+  --color-negative-default: #b91c1c;
+  --color-negative-hover: #991b1b;
+  --color-negative-light: #fef2f2;
+
+  /* Warning */
+  --color-warning-default: hsl(38, 70%, 48%);
+  --color-warning-dark: hsl(38, 70%, 38%);
+  --color-warning-light: hsl(38, 50%, 93%);
+
+  /* Success */
+  --color-success-default: #16a34a;
+  --color-success-light: #f0fdf4;
+
+  /* Info */
+  --color-info-default: #0369a1;
+  --color-info-light: #f0f9ff;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     GREY SCALE — Warm-tinted neutrals
+     ───────────────────────────────────────────────────────────────────────── */
+  --color-grey-50: hsl(45, 20%, 98%);
+  --color-grey-100: hsl(45, 15%, 95%);
+  --color-grey-200: hsl(38, 12%, 90%);
+  --color-grey-300: hsl(38, 10%, 82%);
+  --color-grey-400: hsl(30, 8%, 68%);
+  --color-grey-500: hsl(20, 6%, 52%);
+  --color-grey-600: hsl(20, 6%, 38%);
+  --color-grey-700: hsl(20, 8%, 28%);
+  --color-grey-800: hsl(20, 10%, 18%);
+  --color-grey-900: hsl(20, 15%, 10%);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     SURFACE COLORS
+     ───────────────────────────────────────────────────────────────────────── */
+  --surface-default: hsl(45, 40%, 99%);
+  --surface-raised: hsl(45, 40%, 99%);
+  --surface-sunken: hsl(45, 20%, 94%);
+  --surface-overlay: hsl(45, 40%, 99%);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     TEXT COLORS
+     ───────────────────────────────────────────────────────────────────────── */
+  --text-primary: hsl(20, 15%, 15%);
+  --text-secondary: hsl(20, 8%, 38%);
+  --text-tertiary: hsl(20, 6%, 55%);
+  --text-disabled: hsl(30, 8%, 70%);
+  --text-inverse: hsl(45, 33%, 97%);
+  --text-link: hsl(350, 45%, 30%);
+  --text-error: #b91c1c;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     BORDER COLORS
+     ───────────────────────────────────────────────────────────────────────── */
+  --border-default: hsl(38, 25%, 88%);
+  --border-strong: hsl(38, 20%, 76%);
+  --border-focus: hsl(350, 45%, 30%);
+  --border-error: #b91c1c;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     PIPELINE STAGE COLORS — Retuned for Marryo
+     ───────────────────────────────────────────────────────────────────────── */
+  --stage-new: hsl(350, 45%, 30%);
+  --stage-contacted: hsl(38, 50%, 55%);
+  --stage-qualified: hsl(210, 60%, 45%);
+  --stage-proposal: hsl(260, 40%, 50%);
+  --stage-negotiation: hsl(38, 65%, 42%);
+  --stage-won: hsl(144, 45%, 35%);
+  --stage-lost: hsl(0, 55%, 40%);
+
+  /* Pipeline Stage Backgrounds */
+  --stage-new-bg: hsl(350, 45%, 96%);
+  --stage-contacted-bg: hsl(38, 50%, 94%);
+  --stage-qualified-bg: hsl(210, 60%, 95%);
+  --stage-proposal-bg: hsl(260, 40%, 96%);
+  --stage-negotiation-bg: hsl(38, 65%, 94%);
+  --stage-won-bg: hsl(144, 45%, 95%);
+  --stage-lost-bg: hsl(0, 55%, 96%);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     ACTIVITY TYPE COLORS
+     ───────────────────────────────────────────────────────────────────────── */
+  --activity-call: hsl(144, 45%, 35%);
+  --activity-email: hsl(210, 60%, 45%);
+  --activity-meeting: hsl(260, 40%, 50%);
+  --activity-task: hsl(38, 65%, 42%);
+  --activity-note: hsl(20, 6%, 52%);
+  --activity-deadline: hsl(0, 55%, 40%);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     LEAD TEMPERATURE
+     ───────────────────────────────────────────────────────────────────────── */
+  --lead-hot: hsl(350, 45%, 30%);
+  --lead-warm: hsl(38, 50%, 55%);
+  --lead-cold: hsl(20, 6%, 52%);
+
+  /* Lead Temperature Backgrounds */
+  --lead-hot-bg: hsl(350, 45%, 96%);
+  --lead-warm-bg: hsl(38, 50%, 94%);
+  --lead-cold-bg: hsl(45, 15%, 93%);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     PRIORITY LEVELS
+     ───────────────────────────────────────────────────────────────────────── */
+  --priority-urgent: hsl(0, 65%, 40%);
+  --priority-high: hsl(350, 45%, 30%);
+  --priority-medium: hsl(38, 50%, 55%);
+  --priority-low: hsl(144, 45%, 35%);
+  --priority-none: hsl(20, 6%, 55%);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     DEAL PROBABILITY
+     ───────────────────────────────────────────────────────────────────────── */
+  --probability-high: hsl(144, 45%, 35%);
+  --probability-mid: hsl(38, 50%, 55%);
+  --probability-low: hsl(0, 65%, 40%);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     TASK STATUS
+     ───────────────────────────────────────────────────────────────────────── */
+  --task-overdue: hsl(0, 65%, 40%);
+  --task-due-today: hsl(38, 65%, 42%);
+  --task-upcoming: hsl(210, 60%, 45%);
+  --task-completed: hsl(144, 45%, 35%);
+  --task-cancelled: hsl(20, 6%, 55%);
+
+  /* Task Status Backgrounds */
+  --task-overdue-bg: hsl(0, 55%, 96%);
+  --task-due-today-bg: hsl(38, 65%, 94%);
+  --task-upcoming-bg: hsl(210, 60%, 95%);
+  --task-completed-bg: hsl(144, 45%, 95%);
+  --task-cancelled-bg: hsl(45, 15%, 93%);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     CHARTS - CATEGORICAL
+     ───────────────────────────────────────────────────────────────────────── */
+  --cat-1: hsl(350, 45%, 30%);
+  --cat-2: hsl(38, 50%, 55%);
+  --cat-3: hsl(210, 60%, 45%);
+  --cat-4: hsl(260, 40%, 50%);
+  --cat-5: hsl(144, 45%, 35%);
+  --cat-6: hsl(170, 40%, 35%);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     PROGRESS BAR
+     ───────────────────────────────────────────────────────────────────────── */
+  --progress-default: hsl(350, 45%, 30%);
+  --progress-success: hsl(144, 45%, 35%);
+  --progress-warning: hsl(38, 50%, 55%);
+  --progress-danger: hsl(0, 65%, 40%);
+  --progress-bg: hsl(38, 25%, 88%);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     SPACING (8px Grid System)
+     ───────────────────────────────────────────────────────────────────────── */
+  --space-0: 0px;
+  --space-25: 2px;
+  --space-50: 4px;
+  --space-100: 8px;
+  --space-150: 12px;
+  --space-200: 16px;
+  --space-250: 20px;
+  --space-300: 24px;
+  --space-400: 32px;
+  --space-500: 40px;
+  --space-600: 48px;
+  --space-700: 56px;
+  --space-800: 64px;
+  --space-900: 72px;
+  --space-1000: 80px;
+
+  /* Legacy spacing aliases */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     BORDER RADIUS
+     ───────────────────────────────────────────────────────────────────────── */
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-full: 9999px;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     SHADOWS
+     ───────────────────────────────────────────────────────────────────────── */
+  --shadow-none: none;
+  --shadow-xs: 0 1px 2px rgba(80, 20, 10, 0.04);
+  --shadow-sm: 0 1px 3px rgba(80, 20, 10, 0.06), 0 1px 2px rgba(80, 20, 10, 0.04);
+  --shadow-md: 0 4px 6px rgba(80, 20, 10, 0.07), 0 2px 4px rgba(80, 20, 10, 0.05);
+  --shadow-lg: 0 10px 15px rgba(80, 20, 10, 0.08), 0 4px 6px rgba(80, 20, 10, 0.05);
+  --shadow-xl: 0 20px 25px rgba(80, 20, 10, 0.1), 0 10px 10px rgba(80, 20, 10, 0.04);
+
+  /* Focus Ring */
+  --focus-ring: 0 0 0 2px var(--surface-default), 0 0 0 4px var(--color-primary-default);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     ICON SIZES
+     ───────────────────────────────────────────────────────────────────────── */
+  --icon-xs: 12px;
+  --icon-sm: 16px;
+  --icon-md: 20px;
+  --icon-lg: 24px;
+  --icon-xl: 32px;
+  --icon-2xl: 48px;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     Z-INDEX LAYERS
+     ───────────────────────────────────────────────────────────────────────── */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 300;
+  --z-overlay: 400;
+  --z-toast: 500;
+  --z-sidebar: 10;
+  --z-drawer-backdrop: 40;
+  --z-drawer: 50;
+  --z-tooltip: 90;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     TRANSITIONS
+     ───────────────────────────────────────────────────────────────────────── */
+  --transition-fast: 100ms ease;
+  --transition-normal: 150ms ease;
+  --transition-slow: 300ms ease;
+
+  /* Animation timing functions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+  /* Animation durations */
+  --duration-instant: 0ms;
+  --duration-fast: 120ms;
+  --duration-normal: 200ms;
+  --duration-slow: 350ms;
+  --duration-slower: 500ms;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     LAYOUT DIMENSIONS
+     ───────────────────────────────────────────────────────────────────────── */
+  --sidebar-width: 260px;
+  --sidebar-width-collapsed: 72px;
+  --drawer-width: 520px;
+  --header-height: 60px;
+  --content-padding: 28px;
+  --content-max-width: 1400px;
+
+  /* Container Widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+
+  /* Breakpoints */
+  --breakpoint-xs: 0px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     TYPOGRAPHY — Marryo: Inter body + Cormorant Garamond headings
+     ───────────────────────────────────────────────────────────────────────── */
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-serif: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+  --font-family-mono: 'SF Mono', 'Fira Code', Consolas, monospace;
+  --font-sans: var(--font-family-sans);
+  --font-serif: var(--font-family-serif);
+  --font-body: var(--font-family-sans);
+  --font-mono: var(--font-family-mono);
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Glass morphism properties */
+  --glass-bg: rgba(255, 251, 242, 0.85);
+  --glass-border: rgba(200, 170, 130, 0.25);
+  --glass-blur: 12px;
+
+  /* Legacy semantic aliases — mapped to Marryo tokens */
+  --bg-base: hsl(45, 33%, 97%);
+  --bg-subtle: hsl(45, 20%, 94%);
+  --bg-muted: hsl(38, 12%, 90%);
+  --bg-emphasis: hsl(38, 25%, 84%);
+  --accent-primary: hsl(350, 45%, 30%);
+  --accent-primary-hover: hsl(350, 45%, 24%);
+  --accent-primary-subtle: hsl(350, 45%, 96%);
+  --accent-secondary: hsl(38, 50%, 55%);
+  --accent-secondary-hover: hsl(38, 55%, 45%);
+  --accent-secondary-subtle: hsl(38, 50%, 93%);
+  --status-success: hsl(144, 45%, 35%);
+  --status-success-bg: hsl(144, 45%, 95%);
+  --status-warning: hsl(38, 65%, 42%);
+  --status-warning-bg: hsl(38, 65%, 94%);
+  --status-danger: hsl(0, 65%, 40%);
+  --status-danger-bg: hsl(0, 55%, 96%);
+  --status-info: hsl(210, 60%, 45%);
+  --status-info-bg: hsl(210, 60%, 95%);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DARK MODE
+   Deep warm darks with burgundy accent and gold glow effects
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dark {
+  /* Core surfaces - Deep warm */
+  --background: hsl(20, 12%, 10%);
+  --foreground: hsl(45, 20%, 92%);
+  --card: hsl(20, 10%, 14%);
+  --card-foreground: hsl(45, 20%, 92%);
+  --popover: hsl(20, 10%, 16%);
+  --popover-foreground: hsl(45, 20%, 92%);
+
+  /* Primary - Vivid Burgundy */
+  --primary: hsl(350, 50%, 55%);
+  --primary-foreground: hsl(45, 33%, 97%);
+
+  /* Secondary */
+  --secondary: hsl(20, 10%, 20%);
+  --secondary-foreground: hsl(45, 15%, 85%);
+
+  /* Muted */
+  --muted: hsl(20, 8%, 20%);
+  --muted-foreground: hsl(30, 8%, 58%);
+
+  /* Accent - Warm gold glow */
+  --accent: hsl(38, 30%, 22%);
+  --accent-foreground: hsl(38, 50%, 72%);
+
+  /* Destructive */
+  --destructive: hsl(0, 60%, 55%);
+
+  /* Borders & inputs */
+  --border: hsl(20, 10%, 26%);
+  --input: hsl(20, 10%, 22%);
+  --ring: hsl(350, 50%, 55%);
+
+  /* Chart colors - Dark Marryo */
+  --chart-1: hsl(350, 55%, 55%);
+  --chart-2: hsl(38, 60%, 65%);
+  --chart-3: hsl(350, 40%, 65%);
+  --chart-4: hsl(38, 45%, 75%);
+  --chart-5: hsl(38, 30%, 80%);
+
+  /* Sidebar */
+  --sidebar: hsl(20, 10%, 12%);
+  --sidebar-foreground: hsl(45, 15%, 85%);
+  --sidebar-primary: hsl(350, 50%, 55%);
+  --sidebar-primary-foreground: hsl(45, 33%, 97%);
+  --sidebar-accent: hsl(20, 10%, 20%);
+  --sidebar-accent-foreground: hsl(45, 15%, 85%);
+  --sidebar-border: hsl(20, 10%, 22%);
+  --sidebar-ring: hsl(350, 50%, 55%);
+
+  /* RAW HSL CHANNELS — Dark mode Tailwind opacity modifier support */
+  --background-hsl: 20 12% 10%;
+  --foreground-hsl: 45 20% 92%;
+  --card-hsl: 20 10% 14%;
+  --card-foreground-hsl: 45 20% 92%;
+  --popover-hsl: 20 10% 16%;
+  --popover-foreground-hsl: 45 20% 92%;
+  --primary-hsl: 350 50% 55%;
+  --primary-foreground-hsl: 45 33% 97%;
+  --secondary-hsl: 20 10% 20%;
+  --secondary-foreground-hsl: 45 15% 85%;
+  --muted-hsl: 20 8% 20%;
+  --muted-foreground-hsl: 30 8% 58%;
+  --accent-hsl: 38 30% 22%;
+  --accent-foreground-hsl: 38 50% 72%;
+  --destructive-hsl: 0 60% 55%;
+  --border-hsl: 20 10% 26%;
+  --input-hsl: 20 10% 22%;
+  --ring-hsl: 350 50% 55%;
+  --sidebar-hsl: 20 10% 12%;
+  --sidebar-foreground-hsl: 45 15% 85%;
+  --sidebar-primary-hsl: 350 50% 55%;
+  --sidebar-primary-foreground-hsl: 45 33% 97%;
+  --sidebar-accent-hsl: 20 10% 20%;
+  --sidebar-accent-foreground-hsl: 45 15% 85%;
+  --sidebar-border-hsl: 20 10% 22%;
+  --sidebar-ring-hsl: 350 50% 55%;
+
+  /* Primary color scale - Dark mode Burgundy */
+  --color-primary-default: hsl(350, 50%, 55%);
+  --color-primary-hover: hsl(350, 55%, 65%);
+  --color-primary-active: hsl(350, 45%, 45%);
+  --color-primary-light: rgba(155, 40, 60, 0.15);
+
+  /* Gold scale - dark mode */
+  --color-gold-default: hsl(38, 60%, 65%);
+  --color-gold-hover: hsl(38, 65%, 72%);
+  --color-gold-light: rgba(180, 130, 60, 0.15);
+
+  /* Surface Colors - Dark mode */
+  --surface-default: hsl(20, 10%, 14%);
+  --surface-raised: hsl(20, 10%, 16%);
+  --surface-sunken: hsl(20, 12%, 10%);
+  --surface-overlay: hsl(20, 10%, 18%);
+
+  /* Text Colors - Dark mode */
+  --text-primary: hsl(45, 20%, 92%);
+  --text-secondary: hsl(30, 10%, 65%);
+  --text-tertiary: hsl(20, 8%, 48%);
+  --text-disabled: hsl(20, 6%, 34%);
+  --text-inverse: hsl(20, 12%, 10%);
+  --text-link: hsl(350, 50%, 65%);
+  --text-error: hsl(0, 65%, 60%);
+
+  /* Border Colors - Dark mode */
+  --border-default: hsl(20, 10%, 26%);
+  --border-strong: hsl(20, 8%, 36%);
+  --border-focus: hsl(350, 50%, 55%);
+  --border-error: hsl(0, 65%, 55%);
+
+  /* Background Layers - Warm Darks */
+  --bg-base: hsl(20, 12%, 9%);
+  --bg-subtle: hsl(20, 10%, 11%);
+  --bg-muted: hsl(20, 10%, 14%);
+  --bg-emphasis: hsl(20, 8%, 18%);
+
+  /* Accent Colors - Burgundy & Gold glow */
+  --accent-primary: hsl(350, 50%, 55%);
+  --accent-primary-hover: hsl(350, 55%, 65%);
+  --accent-primary-subtle: rgba(155, 40, 60, 0.15);
+  --accent-secondary: hsl(38, 60%, 65%);
+  --accent-secondary-hover: hsl(38, 65%, 72%);
+  --accent-secondary-subtle: rgba(180, 130, 60, 0.15);
+
+  /* Status Colors - Vivid in dark */
+  --status-success: hsl(144, 50%, 48%);
+  --status-success-bg: rgba(40, 140, 80, 0.12);
+  --status-warning: hsl(38, 60%, 60%);
+  --status-warning-bg: rgba(180, 120, 40, 0.12);
+  --status-danger: hsl(0, 65%, 55%);
+  --status-danger-bg: rgba(180, 40, 40, 0.12);
+  --status-info: hsl(210, 65%, 58%);
+  --status-info-bg: rgba(40, 80, 160, 0.12);
+
+  /* Semantic dark modes */
+  --color-negative-default: hsl(0, 65%, 58%);
+  --color-negative-hover: hsl(0, 65%, 68%);
+  --color-negative-light: rgba(180, 40, 40, 0.15);
+  --color-warning-default: hsl(38, 60%, 60%);
+  --color-warning-dark: hsl(38, 60%, 70%);
+  --color-warning-light: rgba(180, 120, 40, 0.15);
+  --color-success-default: hsl(144, 50%, 48%);
+  --color-success-light: rgba(40, 140, 80, 0.15);
+  --color-info-default: hsl(210, 65%, 58%);
+  --color-info-light: rgba(40, 80, 160, 0.15);
+
+  /* Grey Scale - Dark warm mode */
+  --color-grey-50: hsl(20, 10%, 12%);
+  --color-grey-100: hsl(20, 8%, 18%);
+  --color-grey-200: hsl(20, 6%, 26%);
+  --color-grey-300: hsl(20, 5%, 34%);
+  --color-grey-400: hsl(20, 5%, 46%);
+  --color-grey-500: hsl(20, 5%, 58%);
+  --color-grey-600: hsl(20, 6%, 70%);
+  --color-grey-700: hsl(20, 8%, 80%);
+  --color-grey-800: hsl(30, 10%, 88%);
+  --color-grey-900: hsl(45, 15%, 94%);
+
+  /* Stage Colors - Dark mode */
+  --stage-new-bg: rgba(155, 40, 60, 0.15);
+  --stage-contacted-bg: rgba(180, 130, 60, 0.15);
+  --stage-qualified-bg: rgba(59, 130, 246, 0.15);
+  --stage-proposal-bg: rgba(139, 92, 246, 0.15);
+  --stage-negotiation-bg: rgba(150, 100, 30, 0.15);
+  --stage-won-bg: rgba(40, 140, 80, 0.15);
+  --stage-lost-bg: rgba(180, 40, 40, 0.15);
+
+  /* Lead Temperature Backgrounds - Dark mode */
+  --lead-hot-bg: rgba(155, 40, 60, 0.15);
+  --lead-warm-bg: rgba(180, 130, 60, 0.15);
+  --lead-cold-bg: rgba(100, 90, 80, 0.15);
+
+  /* Task Status Backgrounds - Dark mode */
+  --task-overdue-bg: rgba(180, 40, 40, 0.15);
+  --task-due-today-bg: rgba(150, 100, 30, 0.15);
+  --task-upcoming-bg: rgba(40, 80, 160, 0.15);
+  --task-completed-bg: rgba(40, 140, 80, 0.15);
+  --task-cancelled-bg: rgba(90, 80, 75, 0.15);
+
+  /* Progress - Dark mode */
+  --progress-bg: hsl(20, 8%, 28%);
+
+  /* Glass morphism - Dark Marryo variant */
+  --glass-bg: rgba(32, 20, 16, 0.85);
+  --glass-border: rgba(180, 140, 100, 0.12);
+  --glass-blur: 16px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TAILWIND THEME INTEGRATION
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@layer base {
+  * {
+    border-color: var(--border);
+    outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
+  }
+
+  html {
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
+  }
+
+  /* Heading typography — Cormorant Garamond serif */
+  h1, h2, h3 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+  }
+
+  /* Refined scrollbar — warm beige track */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-strong);
+    border-radius: var(--radius-full);
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-tertiary);
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  /* Selection styling - Burgundy */
+  ::selection {
+    background: var(--accent-primary);
+    color: var(--text-inverse);
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   UTILITY CLASSES - Premium Effects
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@layer utilities {
+  /* Glass morphism card */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+  }
+
+  /* Glow effects - Orange accent */
+  .glow-sm {
+    box-shadow: 0 0 15px -3px var(--accent-primary);
+  }
+
+  .glow-md {
+    box-shadow: 0 0 25px -5px var(--accent-primary);
+  }
+
+  .glow-lg {
+    box-shadow: 0 0 40px -8px var(--accent-primary);
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Subtle noise texture overlay */
+  .noise-overlay {
+    position: relative;
+  }
+
+  .noise-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  .dark .noise-overlay::before {
+    opacity: 0.04;
+  }
+
+  /* Gradient mesh background - Burgundy & Gold themed */
+  .gradient-mesh {
+    background:
+      radial-gradient(at 40% 20%, var(--accent-primary-subtle) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, var(--accent-secondary-subtle) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, var(--accent-primary-subtle) 0px, transparent 50%),
+      radial-gradient(at 80% 80%, var(--accent-secondary-subtle) 0px, transparent 50%),
+      var(--background);
+  }
+
+  /* Animated border gradient */
+  .border-gradient {
+    position: relative;
+    background: var(--card);
+    border-radius: var(--radius-lg);
+  }
+
+  .border-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      var(--accent-primary),
+      var(--accent-secondary),
+      var(--accent-primary)
+    );
+    background-size: 200% 200%;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: border-rotate 4s linear infinite;
+  }
+
+  @keyframes border-rotate {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 200% 200%;
+    }
+  }
+
+  /* Shimmer loading effect */
+  .shimmer {
+    background: linear-gradient(90deg, var(--muted) 0%, var(--bg-emphasis) 50%, var(--muted) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  /* Smooth fade in animation */
+  .animate-in-up {
+    animation: fade-in-up 0.4s var(--ease-out) forwards;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Staggered animation delays */
+  .stagger-1 {
+    animation-delay: 50ms;
+  }
+  .stagger-2 {
+    animation-delay: 100ms;
+  }
+  .stagger-3 {
+    animation-delay: 150ms;
+  }
+  .stagger-4 {
+    animation-delay: 200ms;
+  }
+  .stagger-5 {
+    animation-delay: 250ms;
+  }
+  .stagger-6 {
+    animation-delay: 300ms;
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    transition:
+      transform var(--duration-normal) var(--ease-out),
+      box-shadow var(--duration-normal) var(--ease-out);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 8px 25px -5px rgba(0, 0, 0, 0.1),
+      0 4px 10px -3px rgba(0, 0, 0, 0.05);
+  }
+
+  .dark .hover-lift:hover {
+    box-shadow:
+      0 8px 30px -5px rgba(0, 0, 0, 0.4),
+      0 0 20px -5px var(--accent-primary-subtle);
+  }
+
+  /* Premium card style */
+  .premium-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+
+  .premium-card:hover {
+    border-color: var(--border-strong);
+  }
+
+  .dark .premium-card:hover {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 30px -10px var(--accent-primary);
+  }
+
+  /* Pipeline stage badge utilities */
+  .badge-stage-new {
+    background: var(--stage-new-bg);
+    color: var(--stage-new);
+  }
+  .badge-stage-contacted {
+    background: var(--stage-contacted-bg);
+    color: var(--stage-contacted);
+  }
+  .badge-stage-qualified {
+    background: var(--stage-qualified-bg);
+    color: var(--stage-qualified);
+  }
+  .badge-stage-proposal {
+    background: var(--stage-proposal-bg);
+    color: var(--stage-proposal);
+  }
+  .badge-stage-negotiation {
+    background: var(--stage-negotiation-bg);
+    color: var(--stage-negotiation);
+  }
+  .badge-stage-won {
+    background: var(--stage-won-bg);
+    color: var(--stage-won);
+  }
+  .badge-stage-lost {
+    background: var(--stage-lost-bg);
+    color: var(--stage-lost);
+  }
+
+  /* Lead temperature badge utilities */
+  .badge-lead-hot {
+    background: var(--lead-hot-bg);
+    color: var(--lead-hot);
+  }
+  .badge-lead-warm {
+    background: var(--lead-warm-bg);
+    color: var(--lead-warm);
+  }
+  .badge-lead-cold {
+    background: var(--lead-cold-bg);
+    color: var(--lead-cold);
+  }
+
+  /* Priority badge utilities */
+  .badge-priority-urgent {
+    background: rgba(220, 38, 38, 0.1);
+    color: var(--priority-urgent);
+  }
+  .badge-priority-high {
+    background: rgba(249, 115, 22, 0.1);
+    color: var(--priority-high);
+  }
+  .badge-priority-medium {
+    background: rgba(251, 191, 36, 0.1);
+    color: var(--priority-medium);
+  }
+  .badge-priority-low {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--priority-low);
+  }
+
+  /* Task status badge utilities */
+  .badge-task-overdue {
+    background: var(--task-overdue-bg);
+    color: var(--task-overdue);
+  }
+  .badge-task-due-today {
+    background: var(--task-due-today-bg);
+    color: var(--task-due-today);
+  }
+  .badge-task-upcoming {
+    background: var(--task-upcoming-bg);
+    color: var(--task-upcoming);
+  }
+  .badge-task-completed {
+    background: var(--task-completed-bg);
+    color: var(--task-completed);
+  }
+  .badge-task-cancelled {
+    background: var(--task-cancelled-bg);
+    color: var(--task-cancelled);
+  }
+
+  /* Activity type badge utilities */
+  .badge-activity-call {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--activity-call);
+  }
+  .badge-activity-email {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--activity-email);
+  }
+  .badge-activity-meeting {
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--activity-meeting);
+  }
+  .badge-activity-task {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--activity-task);
+  }
+  .badge-activity-note {
+    background: rgba(107, 114, 128, 0.1);
+    color: var(--activity-note);
+  }
+  .badge-activity-deadline {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--activity-deadline);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPONENT OVERRIDES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Card refinements */
+[data-slot='card'] {
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+/* Button refinements */
+button,
+[role='button'] {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Input refinements */
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+}
+
+/* Badge refinements */
+[data-slot='badge'] {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SIDEBAR ENHANCEMENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Sidebar base styling */
+[data-slot='sidebar'] {
+  transition:
+    width 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Menu button refinements */
+[data-slot='sidebar-menu-button'] {
+  letter-spacing: -0.01em;
+}
+
+/* Active state with left accent bar */
+[data-slot='sidebar-menu-button'][data-active='true'] {
+  position: relative;
+}
+
+/* Smooth hover transitions */
+[data-slot='sidebar-menu-button']:hover {
+  transform: translateX(1px);
+}
+
+[data-slot='sidebar-menu-button'][data-active='true']:hover {
+  transform: none;
+}
+
+/* Group label styling - uppercase sections */
+[data-slot='sidebar-group-label'] {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sidebar-foreground);
+  opacity: 0.4;
+  padding: 0 12px;
+  margin-bottom: 4px;
+}
+
+/* Submenu refinements */
+[data-slot='sidebar-menu-sub'] {
+  margin-top: 4px;
+}
+
+/* Rail hover effect - Gold accent */
+[data-slot='sidebar-rail']:hover {
+  background: linear-gradient(90deg, transparent, var(--color-gold-light, hsl(38, 50%, 93%)));
+}
+
+
+/* Collapsed state icon centering */
+[data-collapsible='icon'] [data-slot='sidebar-menu-button'] {
+  justify-content: center;
+}
+
+/* Footer divider */
+[data-slot='sidebar-footer'] {
+  background: linear-gradient(180deg, transparent, var(--sidebar) 8px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   KANBAN BOARD STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Kanban column styles using pipeline colors */
+.kanban-column-new {
+  border-top: 3px solid var(--stage-new);
+  background: var(--stage-new-bg);
+}
+.kanban-column-contacted {
+  border-top: 3px solid var(--stage-contacted);
+  background: var(--stage-contacted-bg);
+}
+.kanban-column-qualified {
+  border-top: 3px solid var(--stage-qualified);
+  background: var(--stage-qualified-bg);
+}
+.kanban-column-proposal {
+  border-top: 3px solid var(--stage-proposal);
+  background: var(--stage-proposal-bg);
+}
+.kanban-column-negotiation {
+  border-top: 3px solid var(--stage-negotiation);
+  background: var(--stage-negotiation-bg);
+}
+.kanban-column-won {
+  border-top: 3px solid var(--stage-won);
+  background: var(--stage-won-bg);
+}
+.kanban-column-lost {
+  border-top: 3px solid var(--stage-lost);
+  background: var(--stage-lost-bg);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DATA TABLE STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Table row hover - subtle gold tint */
+.data-table-row:hover {
+  background: var(--color-gold-light, hsl(38, 50%, 93%));
+}
+
+.dark .data-table-row:hover {
+  background: rgba(180, 130, 60, 0.06);
+}
+
+/* Selected row */
+.data-table-row-selected {
+  background: var(--color-primary-light, hsl(350, 45%, 96%));
+  border-left: 3px solid var(--color-primary-default);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MARRYO PREMIUM ADDITIONS
+   Heading font, card enhancements, table polish
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Apply serif to dashboard headings only */
+.marryo-heading {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Premium table styling */
+table {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+thead th {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  background: var(--surface-sunken);
+  padding: 12px 16px;
+}
+
+tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-default);
+  transition: background 0.15s ease;
+}
+
+tbody tr:hover td {
+  background: var(--color-gold-light, hsl(38, 50%, 93%));
+}
+
+/* Kanban column styles using Marryo stage colors */
+.kanban-column-new {
+  border-top: 3px solid var(--stage-new);
+  background: var(--stage-new-bg);
+}
+.kanban-column-contacted {
+  border-top: 3px solid var(--stage-contacted);
+  background: var(--stage-contacted-bg);
+}
+.kanban-column-qualified {
+  border-top: 3px solid var(--stage-qualified);
+  background: var(--stage-qualified-bg);
+}
+.kanban-column-proposal {
+  border-top: 3px solid var(--stage-proposal);
+  background: var(--stage-proposal-bg);
+}
+.kanban-column-negotiation {
+  border-top: 3px solid var(--stage-negotiation);
+  background: var(--stage-negotiation-bg);
+}
+.kanban-column-won {
+  border-top: 3px solid var(--stage-won);
+  background: var(--stage-won-bg);
+}
+.kanban-column-lost {
+  border-top: 3px solid var(--stage-lost);
+  background: var(--stage-lost-bg);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SIDEBAR LAYOUT FIX
+   Explicit CSS for sidebar gap - overrides broken Tailwind peer classes
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Sidebar wrapper must fill the full viewport height and use flex-row */
+[data-slot="sidebar-wrapper"] {
+  display: flex;
+  min-height: 100svh;
+  width: 100%;
+}
+
+/* The sidebar gap div creates the left offset for the content area */
+[data-slot="sidebar-gap"] {
+  position: relative;
+  flex-shrink: 0;
+  background: transparent;
+  transition: width 200ms linear;
+}
+
+/* Desktop: sidebar gap width matches sidebar width by default */
+@media (min-width: 768px) {
+  [data-slot="sidebar-gap"] {
+    width: var(--sidebar-width, 16rem);
+  }
+
+  /* When sidebar peer div is in collapsed+icon state, shrink the gap to icon width */
+  [data-slot="sidebar"][data-state="collapsed"][data-collapsible="icon"] [data-slot="sidebar-gap"] {
+    width: var(--sidebar-width-icon, 3rem);
+  }
+
+  /* When sidebar peer div is in collapsed+offcanvas state, hide the gap */
+  [data-slot="sidebar"][data-state="collapsed"][data-collapsible="offcanvas"] [data-slot="sidebar-gap"] {
+    width: 0;
+  }
+}
+
+/* Mobile: no gap (sidebar is in a sheet/overlay) */
+@media (max-width: 767px) {
+  [data-slot="sidebar-gap"] {
+    width: 0;
+  }
+}
+
+/* Sidebar container is fixed on the left */
+[data-slot="sidebar-container"] {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  width: var(--sidebar-width, 16rem);
+  height: 100svh;
+  transition: width 200ms linear, left 200ms linear;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  [data-slot="sidebar-container"] {
+    display: flex;
+  }
+
+  /* When collapsed to icon mode, shrink container width to icon width */
+  [data-slot="sidebar"][data-state="collapsed"][data-collapsible="icon"] [data-slot="sidebar-container"] {
+    width: var(--sidebar-width-icon, 3rem);
+  }
+
+  /* Offcanvas — slide sidebar out to the left when collapsed */
+  [data-slot="sidebar"][data-state="collapsed"][data-collapsible="offcanvas"] [data-slot="sidebar-container"] {
+    left: calc(var(--sidebar-width, 16rem) * -1);
+  }
+}
+
+/* Inset content takes remaining width */
+[data-slot="sidebar-inset"] {
+  flex: 1 1 0%;
+  min-width: 0;
+  background: var(--background);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+
