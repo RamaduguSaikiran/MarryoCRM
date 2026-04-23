@@ -13,8 +13,8 @@ load_dotenv()
 SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-dev-key-please-change-in-production")
 
 if not SECRET_KEY or SECRET_KEY.startswith("django-insecure"):
-    # if os.environ.get("ENV_TYPE", "dev") != "dev":
-    #     raise ValueError("SECRET_KEY must be set to a secure value in non-dev environments")
+    if os.environ.get("ENV_TYPE", "dev") != "dev":
+        raise ValueError("SECRET_KEY must be set to a secure value in non-dev environments")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -134,7 +134,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
-ENV_TYPE = os.environ.get("ENV_TYPE", "dev")
+# ENV_TYPE = os.environ.get("ENV_TYPE", "dev")
+ENV_TYPE = "dev"
 if ENV_TYPE == "dev":
     MEDIA_ROOT = os.path.join(BASE_DIR, "media")
     MEDIA_URL = "/media/"
