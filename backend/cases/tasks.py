@@ -11,7 +11,7 @@ from common.tasks import set_rls_context
 @shared_task
 def send_email_to_assigned_user(recipients, case_id, org_id):
     """Send Mail To Users When they are assigned to a case"""
-    set_rls_context(org_id)
+    # set_rls_context(org_id)
     case = Case.objects.get(id=case_id)
     created_by = case.created_by
     for profile_id in recipients:
