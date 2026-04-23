@@ -88,23 +88,13 @@ WSGI_APPLICATION = "crm.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("DBNAME", "crm_db"),
-        "USER": os.environ.get("DBUSER", "postgres"),
-        "PASSWORD": os.environ.get("DBPASSWORD", "postgres"),
-        "HOST": os.environ.get("DBHOST", "localhost"),
-        "PORT": os.environ.get("DBPORT", "5432"),
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
