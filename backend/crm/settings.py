@@ -20,7 +20,7 @@ if not SECRET_KEY or SECRET_KEY.startswith("django-insecure"):
 DEBUG = True
 
 # Security: Restrict allowed hosts - set ALLOWED_HOSTS env var in production
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 INSTALLED_APPS = [
     "django.contrib.auth",
@@ -58,7 +58,7 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "crum.CurrentRequestUserMiddleware",
     "common.middleware.get_company.GetProfileAndOrg",
-    "common.middleware.rls_context.RequireOrgContext",  # RLS: Enforce org context + set PostgreSQL session variable
+    #"common.middleware.rls_context.RequireOrgContext",  # RLS: Enforce org context + set PostgreSQL session variable
 ]
 
 ROOT_URLCONF = "crm.urls"
@@ -155,8 +155,8 @@ if "django_ses" in EMAIL_BACKEND:
 
 
 # celery Tasks
-CELERY_BROKER_URL = os.environ.get("CELERY_BROKER_URL", "redis://localhost:6379/0")
-CELERY_RESULT_BACKEND = os.environ.get("CELERY_RESULT_BACKEND", "redis://localhost:6379/0")
+# CELERY_BROKER_URL = os.environ.get("CELERY_BROKER_URL", "redis://localhost:6379/0")
+# CELERY_RESULT_BACKEND = os.environ.get("CELERY_RESULT_BACKEND", "redis://localhost:6379/0")
 
 
 LOGGING = {
@@ -324,7 +324,8 @@ SWAGGER_SETTINGS = {
 
 CORS_ALLOW_HEADERS = default_headers + ("org",)
 # Security: CORS configuration via environment variables
-CORS_ORIGIN_ALLOW_ALL = os.environ.get("CORS_ALLOW_ALL", "False").lower() == "true"
+# CORS_ORIGIN_ALLOW_ALL = os.environ.get("CORS_ALLOW_ALL", "False").lower() == "true"
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
     origin.strip()
     for origin in os.environ.get(
@@ -368,8 +369,10 @@ SIMPLE_JWT = {
 JWT_ALGO = "HS256"
 
 
-DOMAIN_NAME = os.environ.get("DOMAIN_NAME", "http://localhost:8000")
-FRONTEND_URL = os.environ.get("FRONTEND_URL", "http://localhost:5173")
+# DOMAIN_NAME = os.environ.get("DOMAIN_NAME", "http://localhost:8000")
+# FRONTEND_URL = os.environ.get("FRONTEND_URL", "http://localhost:5173")
+DOMAIN_NAME = "http://127.0.0.1:8000"
+FRONTEND_URL = "http://127.0.0.1:8000"
 SWAGGER_ROOT_URL = os.environ.get("SWAGGER_ROOT_URL", "http://localhost:8000")
 
 # Google OAuth Configuration
