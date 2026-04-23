@@ -20,7 +20,7 @@ if not SECRET_KEY or SECRET_KEY.startswith("django-insecure"):
 DEBUG = True
 
 # Security: Restrict allowed hosts - set ALLOWED_HOSTS env var in production
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "saikiransai.pythonanywhere.com"]
 
 INSTALLED_APPS = [
     "django.contrib.auth",
