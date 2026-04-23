@@ -17,7 +17,7 @@ if not SECRET_KEY or SECRET_KEY.startswith("django-insecure"):
         raise ValueError("SECRET_KEY must be set to a secure value in non-dev environments")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
+DEBUG = True
 
 # Security: Restrict allowed hosts - set ALLOWED_HOSTS env var in production
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
