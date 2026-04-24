@@ -2,7 +2,7 @@ from django.conf import settings
 from django.contrib import admin
 from django.contrib.auth import views
 from django.urls import include, path
-from django.urls import re_path as url
+from django.urls import re_path 
 from django.views.generic import TemplateView
 from drf_spectacular.views import (
     SpectacularAPIView,
