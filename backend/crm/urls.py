@@ -52,9 +52,10 @@ if settings.DEBUG:
     # )
 
 
-from django.views.generic import TemplateView
 from django.urls import re_path
+from django.views.generic import TemplateView
 
 urlpatterns += [
-    re_path(r'^.*$', TemplateView.as_view(template_name="index.html")),
+    # Serve frontend only for non-static/non-api routes
+    re_path(r'^(?!api/|admin/|static/|_app/|media/).*$', TemplateView.as_view(template_name="index.html")),
 ]
