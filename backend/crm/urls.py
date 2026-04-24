@@ -52,10 +52,21 @@ if settings.DEBUG:
     # )
 
 
-from django.urls import re_path
-from django.views.generic import TemplateView
+from django.views.static import serve
+from django.conf import settings
+import os
 
 urlpatterns += [
-    # Serve frontend only for non-static/non-api routes
-    re_path(r'^(?!api/|admin/|static/|_app/|media/).*$', TemplateView.as_view(template_name="index.html")),
+    # Serve SvelteKit build assets
+    url(r'^_app/(?P<path>.*)$', serve, {
+        'document_root': os.path.join(settings.BASE_DIR, 'frontend_static/_app')
+    }),
+]
+
+# ✅ SPA fallback (LAST)
+urlpatterns += [
+    re_path(
+        r'^(?!api/|admin/|static/|_app/|media/).*$', 
+        TemplateView.as_view(template_name="index.html")
+    ),
 ]
