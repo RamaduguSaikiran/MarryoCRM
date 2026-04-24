@@ -131,6 +131,19 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
+from django.views.static import serve
+import os
+
+urlpatterns += [
+    re_path(
+        r'^_app/(?P<path>.*)$',
+        serve,
+        {
+            'document_root': os.path.join(settings.BASE_DIR, 'frontend_static/_app')
+        }
+    ),
+]
+
 # ✅ SPA fallback (MUST BE LAST)
 urlpatterns += [
     re_path(
