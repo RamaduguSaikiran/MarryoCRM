@@ -56,12 +56,7 @@ from django.views.static import serve
 from django.conf import settings
 import os
 
-urlpatterns += [
-    # Serve SvelteKit build assets
-    url(r'^_app/(?P<path>.*)$', serve, {
-        'document_root': os.path.join(settings.BASE_DIR, 'frontend_static/_app')
-    }),
-]
+
 
 # ✅ SPA fallback (LAST)
 urlpatterns += [
