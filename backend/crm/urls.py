@@ -134,7 +134,7 @@ if settings.DEBUG:
 # ✅ SPA fallback (MUST BE LAST)
 urlpatterns += [
     re_path(
-        r"^(?!api/|admin/|static/|media/).*$",
+        r'^(?!api/|admin/|static/|_app/|media/).*$',
         TemplateView.as_view(template_name="index.html"),
     ),
 ]
