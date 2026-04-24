@@ -9,6 +9,10 @@ from drf_spectacular.views import (
     SpectacularRedocView,
     SpectacularSwaggerView,
 )
+from django.views.static import serve
+from django.conf import settings
+import os
+
 
 app_name = "crm"
 
@@ -52,9 +56,7 @@ if settings.DEBUG:
     # )
 
 
-from django.views.static import serve
-from django.conf import settings
-import os
+
 
 
 
